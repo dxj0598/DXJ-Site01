@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.music-box {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.album-cover {
+    width: 100%;
+    padding-top: 100%; /* This makes it a square */
+    background-size: cover;
+    background-position: center;
+}
+
+.song-title {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.lyrics-scroll {
+    position: relative;
+    height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.lyrics {
+    position: absolute;
+    left: 100%;
+    animation: scrollLyrics 10s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes scrollLyrics {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
